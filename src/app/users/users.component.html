@@ -1,0 +1,65 @@
+<div class="columns is-mobile is-centered">
+    <div class="column "></div>
+    <div class="column">
+
+        <button
+        class="button is-small is-danger"
+        (click)="resetData()"
+        > Reset - Data
+        </button>
+        
+    </div>
+    <div class="column ">
+        <button
+        class="button is-small is-success"
+        (click)="restoreData()"
+        > Restore - Data
+        </button>
+
+    </div>
+    <div class="column "></div>
+</div>
+<div class=" columns ">
+    <div class="column"></div>
+    <div class="column">
+
+        <h1 class="title  is-uppercase is-family-monospace has-text-black-bis	"> User-Data </h1>
+    </div>
+    <div class="column"></div>
+
+</div>
+
+
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"  *ngIf = "users.length!=0 ; else noUsers">
+    <thead>
+        <th class="has-text-link-dark">Name</th>
+        <th class="has-text-link-dark">Username</th>
+        <th class="has-text-link-dark">Email</th>
+        
+    </thead>
+    <tbody >
+        <tr *ngFor="let user of users">
+            <td class="has-text-black-bis">{{user.name}}</td>
+            <td class="has-text-black-bis">{{user.username}}</td>
+            <td class="has-text-black-bis" asmtHighlighter>{{user.email}}</td>
+
+        </tr>
+
+    </tbody>
+</table>
+
+<ng-template #noUsers>
+    <div class=" columns ">
+        <div class="column"></div>
+        <div class="column">
+    <p class=" title nousers"> There is no users .</p>
+    </div>
+    <div class="column"></div>
+    
+    </div>
+
+
+</ng-template>
+
+<div></div>
+<div></div>
